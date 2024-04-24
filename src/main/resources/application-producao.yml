@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:oracle:${DB_PROD_SERVER:thin:@oracle.fiap.com.br}:${DB_PROD_PORT:1521}:${DB_PROD_NAME:ORCL}
-    username: ${DB_PROD_USERNAME:XX}
-    password: ${DB_PROD_PASSWORD:XX}
+    username: ${DB_PROD_USERNAME:RM551456}
+    password: ${DB_PROD_PASSWORD:150404}
   jpa:
     hibernate:
       ddl-auto: none
