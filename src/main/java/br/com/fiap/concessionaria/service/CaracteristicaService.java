@@ -9,15 +9,12 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.List;
 
 @Service
 public class CaracteristicaService implements ServiceDTO<Caracteristica, CaracteristicaRequest, CaracteristicaResponse>{
 
     @Autowired
     private CaracteristicaRepository repo;
-
-
     @Autowired
     private VeiculoService veiculoService;
 

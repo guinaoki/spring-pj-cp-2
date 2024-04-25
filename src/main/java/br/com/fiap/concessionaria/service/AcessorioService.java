@@ -9,10 +9,10 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.List;
 
 @Service
 public class AcessorioService implements ServiceDTO<Acessorio, AcessorioRequest, AcessorioResponse>{
+
     @Autowired
     private AcessorioRepository repo;
 
@@ -33,7 +33,6 @@ public class AcessorioService implements ServiceDTO<Acessorio, AcessorioRequest,
 
     @Override
     public Acessorio toEntity(AcessorioRequest dto) {
-
         return Acessorio.builder()
                 .nome(dto.nome())
                 .preco(dto.preco())
@@ -42,7 +41,6 @@ public class AcessorioService implements ServiceDTO<Acessorio, AcessorioRequest,
 
     @Override
     public AcessorioResponse toResponse(Acessorio e) {
-
         return AcessorioResponse.builder()
                 .id(e.getId())
                 .nome(e.getNome())

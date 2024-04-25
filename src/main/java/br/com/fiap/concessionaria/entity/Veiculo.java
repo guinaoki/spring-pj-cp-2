@@ -52,24 +52,49 @@ public class Veiculo {
     private String palavraDeEfeito;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinColumn(name = "ID_FABRICANTE", referencedColumnName = "ID_FABRICANTE",foreignKey = @ForeignKey(name = "FK_VEICULO_FABRICANTE"))
+    @JoinColumn(
+            name = "FABRICANTE",
+            referencedColumnName = "ID_FABRICANTE",
+            foreignKey = @ForeignKey(
+                    name = "FK_FABRICANTE_VEICULO"
+            )
+    )
+
     private Fabricante fabricante;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinColumn(name = "ID_TIPO_VEICULO",referencedColumnName = "ID_TIPO_VEICULO" ,foreignKey = @ForeignKey(name = "FK_VEICULO_TIPO_VEICULO"))
+    @JoinColumn(
+            name = "TIPO_VEICULO",
+            referencedColumnName = "ID_TIPO_VEICULO",
+            foreignKey = @ForeignKey(
+                    name = "FK_TIPO_VEICULO"
+            )
+    )
+
     private TipoVeiculo tipo;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinTable(
-            name = "TB_VEICULO_ACESSORIO",
-            joinColumns = @JoinColumn(name = "ID_VEICULO",
-                    referencedColumnName = "ID_VEICULO",
-                    foreignKey = @ForeignKey(name = "FK_VEICULO_ACESSORIO")),
-            inverseJoinColumns = @JoinColumn(name = "ID_ACESSORIO",
-                    referencedColumnName = "ID_ACESSORIO",
-                    foreignKey = @ForeignKey(name = "FK_ACESSORIO_VEICULO"))
+            name = "TB_ACESSORIOS",
+            joinColumns = {
+                    @JoinColumn(
+                            name = "VEICULO",
+                            referencedColumnName = "ID_VEICULO",
+                            foreignKey = @ForeignKey(
+                                    name = "FK_VEICULO_ACESSORIO"
+                            )
+                    )
+            },
+            inverseJoinColumns = {
+                    @JoinColumn(
+                            name = "ACESSORIO",
+                            referencedColumnName = "ID_ACESSORIO",
+                            foreignKey = @ForeignKey(
+                                    name = "FK_ACESSORIO_VEICULO"
+                            )
+                    )
+            }
     )
-
     private Set<Acessorio> acessorios = new LinkedHashSet<>();
 
 }
