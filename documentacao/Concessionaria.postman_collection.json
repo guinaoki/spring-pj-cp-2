@@ -1,0 +1,580 @@
+{
+	"info": {
+		"_postman_id": "77e325f6-18ee-44e9-9778-b87d27e7ffb8",
+		"name": "CP2 - Concessionaria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34539485"
+	},
+	"item": [
+		{
+			"name": "Tipos </",
+			"item": [
+				{
+					"name": "localhost/tipo-de-veiculo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Esportiva\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/tipo-de-veiculo",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"tipo-de-veiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost/tipo-de-veiculo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/tipo-de-veiculo?nome=Esportiva",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"tipo-de-veiculo"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Esportiva"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost/tipo-de-veiculo/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/tipo-de-veiculo/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"tipo-de-veiculo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fabricantes </",
+			"item": [
+				{
+					"name": "localhost/fabricantes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Fabricante X\",\r\n    \"nomeFantasia\": \"Fabricante X Fantasia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/fabricantes",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"fabricantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost/fabricantes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/fabricantes?nome=Fabricante XYZ&nomeFantasia=Fabricante XYZ Fantasia",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"fabricantes"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Fabricante X"
+								},
+								{
+									"key": "nomeFantasia",
+									"value": "Fabricante X Fantasia"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost/fabricantes/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/fabricantes/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"fabricantes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Acessorio </",
+			"item": [
+				{
+					"name": "localhost/acessorio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Capacete\",\r\n    \"preco\": 200.00\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/acessorio",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"acessorio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost/acessorio?nome&preco",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/acessorio?nome=Capacetes&preco=200.00",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"acessorio"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Capacete"
+								},
+								{
+									"key": "preco",
+									"value": "200.00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost/acessorio/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/acessorio/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"acessorio",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Veiculos </",
+			"item": [
+				{
+					"name": "localhost/veiculos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Sg\",\r\n    \"modelo\": \"Ninja650\",\r\n    \"anoDeFabricacao\": \"2024\",\r\n    \"tipo\": {\"id\":1},\r\n    \"fabricante\":{\"id\": 1},\r\n    \"cor\": \"Preto\",\r\n    \"palavraDeEfeito\": \"Preto de ninja\",\r\n    \"cilindradas\": 649,\r\n    \"preco\": 49530.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/veiculos",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"veiculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost/veiculos/{id}/acessorios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Farol led\",\r\n    \"preco\": 250\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/veiculos/1/acessorios",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"veiculos",
+								"1",
+								"acessorios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost/veiculos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/veiculos?preco=49530.00&modelo=Ninja650&anoDeFabricacao=2024&nome=Ninja&tipo.id=1&fabricante.id=1&cor=Preto&cilindradas=649",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"veiculos"
+							],
+							"query": [
+								{
+									"key": "preco",
+									"value": "49530.00"
+								},
+								{
+									"key": "modelo",
+									"value": "Ninja650"
+								},
+								{
+									"key": "anoDeFabricacao",
+									"value": "2024"
+								},
+								{
+									"key": "nome",
+									"value": "Ninja"
+								},
+								{
+									"key": "tipo.id",
+									"value": "1"
+								},
+								{
+									"key": "fabricante.id",
+									"value": "1"
+								},
+								{
+									"key": "cor",
+									"value": "Preto"
+								},
+								{
+									"key": "cilindradas",
+									"value": "649"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost/veiculos/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/veiculos/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"veiculos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost/veiculos/{id}/acessorios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/veiculos/1/acessorios",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"veiculos",
+								"1",
+								"acessorios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Caracteristicas",
+			"item": [
+				{
+					"name": "localhost/caracteristicas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"veiculo\":{\"id\": 1},\r\n    \"nome\": \"Cor\",\r\n    \"descricao\": \"Muito rápido\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/caracteristicas",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"caracteristicas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost/caracteristicas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/caracteristicas?veiculo.id=1&descricao=Muito rápido&nome=Cor",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"caracteristicas"
+							],
+							"query": [
+								{
+									"key": "veiculo.id",
+									"value": "1"
+								},
+								{
+									"key": "descricao",
+									"value": "Muito rápido"
+								},
+								{
+									"key": "nome",
+									"value": "Cor"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost/caracteristicas/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/caracteristicas/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"caracteristicas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Loja </",
+			"item": [
+				{
+					"name": "localhost/loja",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"MotoSports\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/loja",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"loja"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost/loja/{id}/veiculos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"preco\": 1920000.00,\r\n    \"modelo\": \"Porsche 911\",\r\n    \"anoDeFabricacao\" : \"2003\",\r\n    \"nome\" : \"GT3 RS\",\r\n    \"tipo\" :{\"id\": 1},\r\n    \"fabricante\" :{\"id\": 1},\r\n    \"cor\" : \"cor\",\r\n    \"palavraDeEfeito\" : \"Bonito e rápido\",\r\n    \"cilindradas\" : 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/loja/1/veiculos",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"loja",
+								"1",
+								"veiculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost/loja",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/loja?nome=MotoSports",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"loja"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "MotoSports"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost/loja/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/loja/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"loja",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost/loja/{id}/veiculos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/loja/1/veiculos",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"loja",
+								"1",
+								"veiculos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
